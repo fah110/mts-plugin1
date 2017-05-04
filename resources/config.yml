@@ -1,1 +1,33 @@
-dropitemworld: [lobby,spawn]
+#ไม่ให้ทิ้งไอเทมบนโลก
+dropitemworld: [lobby,spawn,spawn2]
+
+#BuyEnchant
+amount: 300
+#KillerMiney โดย ImCookieGame
+#
+#Money to Killer
+Money: 10
+#
+#Economy Plugin
+Economy-Plugin: Economy
+#
+#Message to Killer
+Message: "§aYou got $@coins for killing§d @player §a!"
+
+# นาทีสุ่มไอเทมเซิฟ
+Interval: 20
+# สุ่มไอเทมเวลา
+Items:
+- "288:0:1"
+- "288:0:2"
+- "288:0:1"
+- "288:0:1"
+- "288:0:2"
+- "288:0:3"
+- "288:0:3"
+- "288:0:1"
+- "288:0:2"
+- "288:0:1"
+- "288:0:1"
+- "288:0:4"
+
