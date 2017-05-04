@@ -12,7 +12,7 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand {
   public $plugin;
 
   public function __construct(plugin $plugin) {
-    parent::__construct("mts", "help server mts!", "/mts <clearlag>", ["lag"]);
+    parent::__construct("mc-meow", "help server mc-meow", "/mc-meow <help>", ["lag"]);
     $this->setPermission("mts.command.clearlag");
     $this->plugin = $plugin;
   }
@@ -35,15 +35,18 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand {
           $sender->sendMessage("There are " . $c[0] . " players, " . $c[1] . " mobs, and " . $c[2] . " entities.");
           return true;
         case "help":
-          $sender->sendMessage("§eCommand for mts\n/mts check\n/mts clearlag");
+        $sender->sendMessage("§eCommand for Mc-Meow\n/mc-meow info\n/mc-meow check\n/mc-meow clearlag");
+          return true;
+        case "info":
+          $sender->sendMessage("§f[§dMc-Meow§f]§e§lInfo\nเป็นปลั้กอินเสริมจาก §lMc-Meow\nจัดทำโดย MeowZaaaaa");
           return true;
         case "killmobs":
           $sender->sendMessage("Removed " . $this->getPlugin()->removeMobs() . " mobs.");
           return true;
         case "clearlag":
-          $sender->sendMessage("ลบมอนไปทั้งหมด " . ($d = $this->getPlugin()->removeMobs()) . " mob" . ($d == 1 ? "" : "s") . "ลบไอเท็มที่ตกไปทั้งหมด " . ($d = $this->getPlugin()->removeEntities()) . " entity" . ($d == 1 ? "y" : "ies") . ".");
+          $sender->sendMessage("§f[§dServer§f]§e ลบมอนเตอร์ไปทั้งหมด §f[" . ($d = $this->getPlugin()->removeMobs()) . " ]" . ($d == 1 ? "" : "s") . " §eลบไอเท็มที่ตกไปทั้งหมด §f[" . ($d = $this->getPlugin()->removeEntities()) . "] entity" . ($d == 1 ? "y" : "ies") . ".");
           return true;
-        case "tpchunk":
+        case "buyenchant":
           // TODO
           return true;
         default:
